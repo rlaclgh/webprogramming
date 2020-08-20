@@ -18,6 +18,7 @@ from django.urls import path , include
 
 #from bookmark.views import BookmarkLV, BookmarkDV
 from bookmark import views
+from mycodes.views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,9 +33,9 @@ urlpatterns = [
     # path('bookmark/<int:pk>/' , BookmarkDV.as_view(),name = "detail"),
 
 
+    path('',HomeView.as_view(), name="home"),
 
 
-
-    path('',views.login, name="login"),
-    path('accounts/',include('allauth.urls')),
+    #path('',views.login, name="login"),
+    #path('accounts/',include('allauth.urls')),
 ]
